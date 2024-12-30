@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "expo-boilerplate",
-    "slug": "expo-boilerplate",
+    "name": "springten-app",
+    "slug": "springten-app",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",

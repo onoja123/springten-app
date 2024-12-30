@@ -1,17 +1,31 @@
-import { View, Text } from "react-native";
-import React from "react";
+import { View, Text, StyleSheet } from "react-native";
+import React, { useEffect } from "react";
 import ScreenView from "@/layout/ScreenView";
-import { SURFACE_COLOR } from "@/constants/colors";
 import { SplashScreenProps } from "@/utils/types";
+import Logo from "@/assets/icons/logo.svg";
+import { HEIGHT } from "@/constants/size";
 
-const SplashScreen = ({}: SplashScreenProps) => {
+const SplashScreen = ({ navigation }: SplashScreenProps) => {
+  useEffect(() => {
+    setTimeout(() => {
+      navigation.navigate("onboarding-screen");
+    }, 3000);
+  }, []);
   return (
-    <ScreenView backgroundColor={SURFACE_COLOR}>
+    <ScreenView>
       <View className="justify-center items-center h-full">
-        <Text className="text-3xl text-white">Splash Screen</Text>
+        <Logo style={styles.logo} />
       </View>
     </ScreenView>
   );
 };
 
 export default SplashScreen;
+
+const styles = StyleSheet.create({
+  logo: {
+    marginBottom: HEIGHT * 0.25,
+    width: 88,
+    height: 88,
+  },
+});

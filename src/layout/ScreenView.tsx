@@ -1,3 +1,4 @@
+import { SURFACE_COLOR } from "@/constants/colors";
 import React, { ReactNode } from "react";
 import { Platform, StyleSheet, ViewStyle, StatusBar } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
@@ -16,7 +17,7 @@ const ScreenView = (props: Props) => {
         styles.container,
         style,
         {
-          backgroundColor: backgroundColor || "white",
+          backgroundColor: backgroundColor || SURFACE_COLOR,
           paddingTop: Platform.OS === "android" ? 30 : 0,
         },
       ]}

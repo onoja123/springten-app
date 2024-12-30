@@ -5,6 +5,8 @@ import { createStackNavigator } from "@react-navigation/stack";
 import { RootStackParamList } from "@/utils/types";
 import WalkStack from "./WalkStack";
 import { ScreenOptions } from "@/utils/stack_options";
+import AuthStack from "./AuthStack";
+import BottomTab from "./BottomTab";
 
 const Stack = createStackNavigator<RootStackParamList>();
 const RootRouter = () => {
@@ -12,6 +14,8 @@ const RootRouter = () => {
     <NavigationContainer>
       <Stack.Navigator screenOptions={ScreenOptions}>
         <Stack.Screen name="walkthrough-stack" component={WalkStack} />
+        <Stack.Screen name="auth-stack" component={AuthStack} />
+        <Stack.Screen name="bottom-tab" component={BottomTab} />
       </Stack.Navigator>
     </NavigationContainer>
   );
