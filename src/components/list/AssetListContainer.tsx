@@ -1,6 +1,7 @@
 import { View, Text } from "react-native";
 import React from "react";
 import AssetListItem from "./AssetListItem";
+import { StoredCoinList } from "@/data/phase";
 
 const AssetListContainer = () => {
   return (
@@ -10,13 +11,21 @@ const AssetListContainer = () => {
       </View>
       <View>
         <View className="p-3">
-          <Text className="text-white/50 text-sm font-medium">1 stored</Text>
+          <Text className="text-white/50 text-sm font-medium">
+            {StoredCoinList.length} Stored
+          </Text>
         </View>
-        <AssetListItem isItemHere />
+        {StoredCoinList.map((value, index) => (
+          <AssetListItem
+            isItemHere={StoredCoinList.length > 0}
+            key={index}
+            item={value}
+          />
+        ))}
       </View>
       <View>
         <View className="p-3">
-          <Text className="text-white/50 text-sm font-medium">0 staked</Text>
+          <Text className="text-white/50 text-sm font-medium">0 Staked</Text>
         </View>
         <AssetListItem />
       </View>

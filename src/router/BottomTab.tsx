@@ -12,6 +12,8 @@ const BottomTab = () => {
     <Tab.Navigator
       screenOptions={{
         ...ScreenOptions,
+        tabBarActiveTintColor: "#8181E6",
+        tabBarInactiveTintColor: "#FFFFFF80",
         tabBarLabelStyle: {
           display: "none",
         },
@@ -26,7 +28,15 @@ const BottomTab = () => {
         name="home-screen"
         component={HomeScreen}
         options={{
-          tabBarIcon: ({ color }) => <DBIcon />,
+          tabBarIcon: ({ color, focused }) => (
+            <View
+              className={`w-12 h-8 rounded-full items-center justify-center ${
+                focused ? "bg-white/10" : ""
+              }`}
+            >
+              <DBIcon fill={color} />
+            </View>
+          ),
         }}
       />
     </Tab.Navigator>

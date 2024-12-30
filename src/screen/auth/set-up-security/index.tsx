@@ -20,13 +20,15 @@ const SetUpSecurityScreen = ({ navigation }: SetUpSecurityScreenProps) => {
           <LineCheckBox isSwitch />
         </View>
 
-        <PrimaryButton
-          textClassName="text-call-action-text"
-          className="bg-primary-button"
-          onPress={() => navigation.navigate("secret-phase-screen")}
-        >
-          Continue
-        </PrimaryButton>
+        <View className="py-3">
+          <PrimaryButton
+            textClassName="text-call-action-text"
+            className="bg-primary-button"
+            onPress={() => navigation.navigate("secret-phase-screen")}
+          >
+            Continue
+          </PrimaryButton>
+        </View>
       </View>
     </ScreenView>
   );
