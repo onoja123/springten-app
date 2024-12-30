@@ -10,6 +10,7 @@ module.exports = {
         secondary: "#4D4D4D",
         "primary-button": "#E6E6E6",
         "call-action-text": "#1A1A1A",
+        "text-link": "#8181E6",
       },
     },
   },
