@@ -1,3 +1,10 @@
+import BuyIcon from "@/assets/icons/buy.svg";
+import SellIcon from "@/assets/icons/sell.svg";
+import ReceiveIcon from "@/assets/icons/receive.svg";
+import SendIcon from "@/assets/icons/send.svg";
+import SwapIcon from "@/assets/icons/swap.svg";
+import StakeIcon from "@/assets/icons/stake.svg";
+
 export type StoredCoinListProps = {
   id: number;
   coin: string;
@@ -83,3 +90,44 @@ export const StoredCoinList: StoredCoinListProps[] = [
     cost: "$35.88",
   },
 ];
+
+export const TradeMenuListData = [
+  {
+    id: 1,
+    title: "Buy",
+    subTitle: "Purchase crypto with cash",
+    Icon: BuyIcon,
+  },
+  {
+    id: 2,
+    title: "Sell",
+    subTitle: "Convert crypto to cash",
+    Icon: SellIcon,
+  },
+  {
+    id: 3,
+    title: "Receive",
+    subTitle: "Get crypto from others",
+    Icon: ReceiveIcon,
+  },
+  {
+    id: 4,
+    title: "Send",
+    subTitle: "Send crypto to any account",
+    Icon: SendIcon,
+  },
+  {
+    id: 5,
+    title: "Swap",
+    subTitle: "Exchange one token for another",
+    Icon: SwapIcon,
+  },
+  {
+    id: 6,
+    title: "Stake",
+    subTitle: "Lock crypto and earn rewards",
+    Icon: StakeIcon,
+  },
+];
+
+export const currencyTags = ["All", "Ethereum", "Polygon", "Base"];

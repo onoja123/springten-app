@@ -7,16 +7,19 @@ import {
 } from "react-native-safe-area-context";
 import RootRouter from "@/router";
 import Toast from "react-native-toast-message";
+import { GestureHandlerRootView } from "react-native-gesture-handler";
 
 export default function App() {
   return (
-    <SafeAreaProvider
-      style={styles.container}
-      initialMetrics={initialWindowMetrics}
-    >
-      <RootRouter />
-      <Toast />
-    </SafeAreaProvider>
+    <GestureHandlerRootView style={styles.container}>
+      <SafeAreaProvider
+        style={styles.container}
+        initialMetrics={initialWindowMetrics}
+      >
+        <RootRouter />
+        <Toast />
+      </SafeAreaProvider>
+    </GestureHandlerRootView>
   );
 }
 

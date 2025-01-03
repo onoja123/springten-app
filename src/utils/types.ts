@@ -5,6 +5,7 @@ export type RootStackParamList = {
   "walkthrough-stack": undefined;
   "auth-stack": undefined;
   "bottom-tab": undefined;
+  "transaction-type-stack": Record<string, any>;
 };
 
 export type WalkthroughStackParamList = {
@@ -21,7 +22,38 @@ export type AuthStackParamList = {
 
 export type BottomTabParamList = {
   "home-screen": undefined;
+  "middle-tab": undefined;
+  // "transaction-type-stack": Record<string, any>;
 };
+
+export type TransactionTypeStackParamList = {
+  "swap-stack": undefined;
+};
+
+export type SwapStackParamList = {
+  "swap-screen": undefined;
+  "choose-currency-screen": { title: string };
+  "review-order-screen": undefined;
+  "transaction-swap-details-screen": undefined;
+  "bottom-tab": { screen: string };
+};
+
+export type SwapScreenProps = StackScreenProps<
+  SwapStackParamList,
+  "swap-screen"
+>;
+export type ChooseCurrencyScreenProps = StackScreenProps<
+  SwapStackParamList,
+  "choose-currency-screen"
+>;
+export type ReviewOrderScreenProps = StackScreenProps<
+  SwapStackParamList,
+  "review-order-screen"
+>;
+export type TransactionDetailsScreenProps = StackScreenProps<
+  SwapStackParamList,
+  "transaction-swap-details-screen"
+>;
 
 export type SplashScreenProps = StackScreenProps<
   WalkthroughStackParamList,
