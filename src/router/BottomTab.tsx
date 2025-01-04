@@ -6,18 +6,21 @@ import { BottomTabParamList } from "@/utils/types";
 import { ScreenOptions } from "@/utils/stack_options";
 import { SURFACE_DEEP } from "@/constants/colors";
 import DBIcon from "@/assets/icons/db.svg";
+import MenuIcon from "@/assets/icons/menu.svg";
+import SettingsIcon from "@/assets/icons/settings.svg";
 import TradeIcon from "@/assets/icons/trade.svg";
-// import { BottomSheet } from "@/components/ui/BottomSheet";
-import { HEIGHT } from "@/constants/size";
+import ClockIcon from "@/assets/icons/clock.svg";
 import { TradeMenuListData } from "@/data/phase";
 import TradeMenuItem from "@/components/list/TradeMenuItem";
-import { TransactionTypeStack } from "./AppStack";
-import CustomTabBar from "@/components/ui/CustomTabBar";
+
 import BottomSheet, {
   BottomSheetScrollView,
   BottomSheetView,
 } from "@gorhom/bottom-sheet";
 import { useNavigation } from "@react-navigation/native";
+import TransactionScreen from "@/screen/app/transaction";
+import SettingsScreen from "@/screen/app/settings";
+import CollectScreen from "@/screen/collections";
 const Tab = createBottomTabNavigator<BottomTabParamList>();
 const BottomTab = () => {
   const bottomSheetRef = useRef<BottomSheet>(null);
@@ -32,7 +35,6 @@ const BottomTab = () => {
   return (
     <View style={styles.container}>
       <Tab.Navigator
-        // tabBar={(props) => <CustomTabBar {...props} />}
         screenOptions={{
           ...ScreenOptions,
           tabBarActiveTintColor: "#8181E6",
@@ -64,13 +66,27 @@ const BottomTab = () => {
           }}
         />
         <Tab.Screen
+          name="transaction-screen"
+          component={TransactionScreen}
+          options={{
+            tabBarIcon: ({ color, focused }) => (
+              <View
+                className={`w-12 h-8 rounded-full items-center justify-center ${
+                  focused ? "bg-white/10" : ""
+                }`}
+              >
+                <ClockIcon fill={color} />
+              </View>
+            ),
+          }}
+        />
+        <Tab.Screen
           name="middle-tab"
           component={() => null}
           listeners={{
             tabPress: (e) => {
               e.preventDefault(); // Prevent default navigation
               bottomSheetRef.current?.expand();
-              // setBottomSheetVisible(true); // Show the bottom sheet
             },
           }}
           // component={TransactionTypeStack}
@@ -82,6 +98,36 @@ const BottomTab = () => {
                 }`}
               >
                 <TradeIcon fill={color} />
+              </View>
+            ),
+          }}
+        />
+        <Tab.Screen
+          name="collection-screen"
+          component={CollectScreen}
+          options={{
+            tabBarIcon: ({ color, focused }) => (
+              <View
+                className={`w-12 h-8 rounded-full items-center justify-center ${
+                  focused ? "bg-white/10" : ""
+                }`}
+              >
+                <MenuIcon fill={color} />
+              </View>
+            ),
+          }}
+        />
+        <Tab.Screen
+          name="settings-screen"
+          component={SettingsScreen}
+          options={{
+            tabBarIcon: ({ color, focused }) => (
+              <View
+                className={`w-12 h-8 rounded-full items-center justify-center ${
+                  focused ? "bg-white/10" : ""
+                }`}
+              >
+                <SettingsIcon fill={color} />
               </View>
             ),
           }}

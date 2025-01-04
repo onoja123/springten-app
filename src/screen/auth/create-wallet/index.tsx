@@ -15,7 +15,7 @@ const CreateWalletScreen = ({ navigation }: CreateWalletScreenProps) => {
     setTimeout(() => {
       setIsLoading(false);
       navigation.navigate("bottom-tab");
-    }, 5000);
+    }, 2000);
   };
   return (
     <>
