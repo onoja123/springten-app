@@ -22,12 +22,16 @@ export type AuthStackParamList = {
 
 export type BottomTabParamList = {
   "home-screen": undefined;
+  "transaction-screen": undefined;
   "middle-tab": undefined;
+  "menu-screen": undefined;
+  "settings-screen": undefined;
   // "transaction-type-stack": Record<string, any>;
 };
 
 export type TransactionTypeStackParamList = {
   "swap-stack": undefined;
+  "buy-stack": undefined;
 };
 
 export type SwapStackParamList = {
@@ -38,10 +42,94 @@ export type SwapStackParamList = {
   "bottom-tab": { screen: string };
 };
 
+export type BuyStackParamList = {
+  "select-token-screen": { title: string };
+  "form-screen": undefined;
+  "quote-screen": undefined;
+  "select-payment-screen": undefined;
+  "transaction-buy-details-screen": undefined;
+  "bottom-tab": { screen: string };
+};
+
+export type SellStackParamList = {
+  "select-token-screen": { title: string };
+  "form-screen": undefined;
+  "quote-screen": undefined;
+  "select-payment-screen": undefined;
+  "transaction-sell-details-screen": undefined;
+  "bottom-tab": { screen: string };
+};
+
+
+export type SendStackParamList = {
+  "select-token-screen": { title: string };
+  "form-screen": undefined;
+  "quote-screen": undefined;
+  "transaction-send-details-screen": undefined;
+  "bottom-tab": { screen: string };
+};
+
+export type StakeStackParamList = {
+  "select-token-screen": { title: string };
+  "form-screen": undefined;
+  "choose-item-screen": undefined;
+  "quote-screen": undefined;
+  "bottom-tab": { screen: string };
+};
+
 export type SwapScreenProps = StackScreenProps<
   SwapStackParamList,
   "swap-screen"
 >;
+
+export type SelectTokenScreenProps = StackScreenProps<
+  BuyStackParamList,
+  "select-token-screen"
+>;
+
+export type FormScreenProps = StackScreenProps<
+  BuyStackParamList,
+  "form-screen"
+>;
+
+export type QuoteScreenProps = StackScreenProps<
+  BuyStackParamList,
+  "quote-screen"
+>;
+
+
+export type SelectPaymentScreenProps = StackScreenProps<
+  BuyStackParamList,
+  "select-payment-screen"
+>;
+
+
+export type TransactionBuyDetailsScreenProps = StackScreenProps<
+  BuyStackParamList,
+  "transaction-buy-details-screen"
+>;
+
+export type SelectSendTokenScreenProps = StackScreenProps<
+  SendStackParamList,
+  "select-token-screen"
+>;
+
+export type FormSendScreenProps = StackScreenProps<
+  SendStackParamList,
+  "form-screen"
+>;
+
+export type QuoteSendScreenProps = StackScreenProps<
+  SendStackParamList,
+  "quote-screen"
+>;
+
+
+export type TransactionSendDetailsScreenProps = StackScreenProps<
+  SendStackParamList,
+  "transaction-send-details-screen"
+>;
+
 export type ChooseCurrencyScreenProps = StackScreenProps<
   SwapStackParamList,
   "choose-currency-screen"

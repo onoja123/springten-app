@@ -97,36 +97,42 @@ export const TradeMenuListData = [
     title: "Buy",
     subTitle: "Purchase crypto with cash",
     Icon: BuyIcon,
+    screen: "buy-stack",
   },
   {
     id: 2,
     title: "Sell",
     subTitle: "Convert crypto to cash",
     Icon: SellIcon,
+    screen: "sell-stack",
   },
   {
     id: 3,
     title: "Receive",
     subTitle: "Get crypto from others",
     Icon: ReceiveIcon,
+    screen: "receive-stack",
   },
   {
     id: 4,
     title: "Send",
     subTitle: "Send crypto to any account",
     Icon: SendIcon,
+    screen: "swipe-stack",
   },
   {
     id: 5,
     title: "Swap",
     subTitle: "Exchange one token for another",
     Icon: SwapIcon,
+    screen: "swap-stack",
   },
   {
     id: 6,
     title: "Stake",
     subTitle: "Lock crypto and earn rewards",
     Icon: StakeIcon,
+    screen: "stake-stack",
   },
 ];
 

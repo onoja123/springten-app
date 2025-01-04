@@ -9,7 +9,7 @@ const SplashScreen = ({ navigation }: SplashScreenProps) => {
   useEffect(() => {
     setTimeout(() => {
       navigation.navigate("onboarding-screen");
-    }, 3000);
+    }, 2000);
   }, []);
   return (
     <ScreenView>
