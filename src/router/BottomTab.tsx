@@ -108,7 +108,7 @@ const BottomTab = () => {
               onPress={() => {
                 bottomSheetRef.current?.close(); // Close the bottom sheet
                 navigation.navigate("transaction-type-stack", {
-                  screen: "swap-stack",
+                  screen: value.screen,
                 }); // Replace with the actual target screen name
               }}
             />
