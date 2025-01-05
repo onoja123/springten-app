@@ -1,6 +1,6 @@
 import { View, Text, Animated, TouchableOpacity } from "react-native";
 import React, { useRef, useState } from "react";
-import { QuoteScreenProps } from "@/utils/types";
+import { QuoteSellScreenProps } from "@/utils/types";
 import ScreenView from "@/layout/ScreenView";
 import GlobalHeader from "@/components/header/GlobalHeader";
 import SwapInputForm from "@/components/input/SwapInputForm";
@@ -14,7 +14,7 @@ import ValidQuote from "@/components/ui/ValidQuote";
 import { Ionicons } from "@expo/vector-icons";
 import { CustomToaster } from "@/utils/core";
 
-const SellQuoteScreen = ({ navigation, route }: QuoteScreenProps) => {
+const SellQuoteScreen = ({ navigation, route }: QuoteSellScreenProps) => {
   const [isLoading, setIsLoading] = useState(false);
   const slideAnim = useRef(new Animated.Value(0)).current;
   const [isModalVisible, setIsModalVisible] = useState(false);

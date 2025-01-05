@@ -2,7 +2,7 @@ import { View, Text, TouchableOpacity, ScrollView } from "react-native";
 import React, { useState } from "react";
 import ScreenView from "@/layout/ScreenView";
 import GlobalHeader from "@/components/header/GlobalHeader";
-import { SelectTokenScreenProps } from "@/utils/types";
+import { SelectSellTokenScreenProps } from "@/utils/types";
 import CustomSearch from "@/components/input/CustomSearch";
 import { currencyTags } from "@/data/phase";
 import { availableTokens } from "@/data/swap";
@@ -12,7 +12,7 @@ import { HEIGHT } from "@/constants/size";
 const SelectSellTokenScreen = ({
   route,
   navigation,
-}: SelectTokenScreenProps) => {
+}: SelectSellTokenScreenProps) => {
 
   const [activeTag, setActiveTag] = useState("All");
   return (

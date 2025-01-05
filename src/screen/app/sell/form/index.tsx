@@ -1,6 +1,6 @@
 import { View, Text } from "react-native";
 import React, { useState } from "react";
-import { FormScreenProps, SwapScreenProps } from "@/utils/types";
+import { FormSellScreenProps } from "@/utils/types";
 import ScreenView from "@/layout/ScreenView";
 import GlobalHeader from "@/components/header/GlobalHeader";
 import SwapInputForm from "@/components/input/SwapInputForm";
@@ -11,7 +11,7 @@ import PrimaryButton from "@/components/button/PrimaryButton";
 import ValidQuote from "@/components/ui/ValidQuote";
 import BuyInputForm from "@/components/input/BuyInputForm";
 
-const SellFormScreen = ({ navigation }: FormScreenProps) => {
+const SellFormScreen = ({ navigation }: FormSellScreenProps) => {
   const [selectedInput, setSelectedInput] = useState<"buy" | null>(null); // Tracks which input is selected
   const [buyValue, setBuyValue] = useState(""); // Value for "You Send"
 

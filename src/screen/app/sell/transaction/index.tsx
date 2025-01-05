@@ -1,7 +1,7 @@
 import { View, Text } from "react-native";
 import React from "react";
 import ScreenView from "@/layout/ScreenView";
-import { TransactionBuyDetailsScreenProps } from "@/utils/types";
+import { TransactionSellDetailsScreenProps } from "@/utils/types";
 import GlobalHeader from "@/components/header/GlobalHeader";
 import TransactionDetailLine from "@/components/ui/TransactionDetailLine";
 import BuyIcon from "@/assets/icons/buy.svg";
@@ -9,7 +9,7 @@ import PrimaryButton from "@/components/button/PrimaryButton";
 
 const TransactionSellScreen = ({
   navigation,
-}: TransactionBuyDetailsScreenProps) => {
+}: TransactionSellDetailsScreenProps) => {
   return (
     <ScreenView>
       <GlobalHeader title="Buy" ionicons={{ name: "close" }} />

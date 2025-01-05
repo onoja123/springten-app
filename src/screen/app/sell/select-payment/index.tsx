@@ -1,7 +1,7 @@
 import { View, Text } from "react-native";
 import React, { useEffect, useState } from "react";
 import ScreenView from "@/layout/ScreenView";
-import { SelectPaymentScreenProps } from "@/utils/types";
+import { SelectSellTokenScreenProps } from "@/utils/types";
 import GlobalHeader from "@/components/header/GlobalHeader";
 import TransactionDetailLine from "@/components/ui/TransactionDetailLine";
 import CreditCardIcon from "@/assets/icons/credit_card.svg";
@@ -12,7 +12,7 @@ import AssetListItem from "@/components/list/AssetListItem";
 import ProviderItem from "@/components/ui/ProviderItem";
 import { ProviderListData } from "@/data/phase";
 
-const SelectSellPaymentScreen = ({ navigation }: SelectPaymentScreenProps) => {
+const SelectSellPaymentScreen = ({ navigation }: SelectSellTokenScreenProps) => {
   const [selectedPayment, setSelectedPayment] = useState<string | null>(null);
   const [selectedProvider, setSelectedProvider] = useState<number | null>(null);
 
