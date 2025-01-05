@@ -1,19 +1,22 @@
 import { View, Text, TouchableOpacity, ScrollView } from "react-native";
 import React, { useState } from "react";
 import ScreenView from "@/layout/ScreenView";
-import { SelectSendTokenScreenProps } from "@/utils/types";
 import GlobalHeader from "@/components/header/GlobalHeader";
+import { SelectSellTokenScreenProps } from "@/utils/types";
 import CustomSearch from "@/components/input/CustomSearch";
 import { currencyTags } from "@/data/phase";
-import { HEIGHT } from "@/constants/size";
+import { availableTokens } from "@/data/swap";
 import TokenButtonItem from "@/components/button/TokenButtonItem";
+import { HEIGHT } from "@/constants/size";
 
-const SelectSendTokenScreen = ({ navigation }: SelectSendTokenScreenProps) => {
+const SelectSellTokenScreen = ({
+  route,
+  navigation,
+}: SelectSellTokenScreenProps) => {
   const [activeTag, setActiveTag] = useState("All");
-
   return (
-    <ScreenView>
-      <GlobalHeader title={"Send"} ionicons={{ name: "close" }} />
+    <ScreenView style={{ flex: 0 }}>
+      <GlobalHeader title={"Sell"} ionicons={{ name: "close" }} />
       <View className="p-3">
         <CustomSearch />
         <View className="flex-row items-center gap-2 py-3">
@@ -45,26 +48,24 @@ const SelectSendTokenScreen = ({ navigation }: SelectSendTokenScreenProps) => {
         showsVerticalScrollIndicator={false}
       >
         <View className="p-3 gap-2">
-          {/* {availableTokens.map((value, index) => ( */}
           <TokenButtonItem
             src={require("@/assets/images/uni.png")}
             title={"UNI"}
             content={`Uniswap`}
             //   key={index}
-            onPress={() => navigation.navigate("form-send-screen")}
+            onPress={() => navigation.navigate("form-sell-screen")}
           />
           <TokenButtonItem
             src={require("@/assets/images/usdc.png")}
             title={"USDC"}
             content={`USD Coin`}
             //   key={index}
-            onPress={() => navigation.navigate("form-send-screen")}
+            onPress={() => navigation.navigate("form-sell-screen")}
           />
-          {/* ))} */}
         </View>
       </ScrollView>
     </ScreenView>
   );
 };
 
-export default SelectSendTokenScreen;
+export default SelectSellTokenScreen;

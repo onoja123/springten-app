@@ -8,9 +8,12 @@ type Props = {
   swap?: boolean;
   isIcon?: boolean;
   buy?: boolean;
+  src?: any;
+  price?: string;
+  network?: string;
 };
 const TransactionDetailLine = (props: Props) => {
-  const { Icon, isIcon = true, swap, buy } = props;
+  const { Icon, isIcon = true, swap, buy, network, price, src } = props;
   return (
     <View className="border border-white/15 rounded-lg p-3 flex-row items-center gap-3">
       {isIcon && (
@@ -39,12 +42,9 @@ const TransactionDetailLine = (props: Props) => {
       )}
       {buy && (
         <View className="flex-row items-center gap-3">
-          <Image
-            source={require("@/assets/images/link.png")}
-            className="w-6 h-6"
-          />
-          <Text className="text-white text-2xl font-medium">7.4308</Text>
-          <Text className="text-white/50 text-2xl font-medium">LINK</Text>
+          <Image source={src} className="w-6 h-6" />
+          <Text className="text-white text-2xl font-medium">{price}</Text>
+          <Text className="text-white/50 text-2xl font-medium">{network}</Text>
         </View>
       )}
     </View>

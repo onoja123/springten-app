@@ -1,26 +1,26 @@
 import { View, Text } from "react-native";
 import React from "react";
 import ScreenView from "@/layout/ScreenView";
-import { TransactionBuyDetailsScreenProps } from "@/utils/types";
+import { TransactionStakeDetailsScreenProps } from "@/utils/types";
 import GlobalHeader from "@/components/header/GlobalHeader";
 import TransactionDetailLine from "@/components/ui/TransactionDetailLine";
-import BuyIcon from "@/assets/icons/buy.svg";
+import StakeIcon from "@/assets/icons/stake.svg";
 import PrimaryButton from "@/components/button/PrimaryButton";
 
-const TransactionBuyScreen = ({
+const TransactionStakeScreen = ({
   navigation,
-}: TransactionBuyDetailsScreenProps) => {
+}: TransactionStakeDetailsScreenProps) => {
   return (
     <ScreenView>
-      <GlobalHeader title="Buy" ionicons={{ name: "close" }} />
+      <GlobalHeader title="Stake" ionicons={{ name: "close" }} />
       <View className="flex-1 justify-between mt-2">
         <View className="px-3">
           <TransactionDetailLine
             buy
-            Icon={BuyIcon}
-            src={require("@/assets/images/link.png")}
-            price="7.4308"
-            network="LINK"
+            Icon={StakeIcon}
+            src={require("@/assets/images/eth.png")}
+            price="11.00"
+            network="ETH"
           />
           <Text className="text-base font-medium text-white py-3">Details</Text>
           <View>
@@ -30,51 +30,50 @@ const TransactionBuyScreen = ({
               </Text>
               <View className="border border-white/15 rounded-lg w-full">
                 <View className="p-3 flex-row justify-between items-center border-b border-b-white/15">
-                  <Text className="text-white/50 text-sm">Date</Text>
-                  <Text className="text-white text-sm">Apr 1, 2024/ 20:50</Text>
+                  <Text className="text-white/50 text-sm">Stake Date</Text>
+                  <Text className="text-white text-sm">11/23/2024 23:08</Text>
                 </View>
                 <View className="p-3 flex-row justify-between items-center border-b border-b-white/15">
                   <Text className="text-white/50 text-sm">Status</Text>
-                  <Text className="text-alert-success text-sm">Success</Text>
+                  <Text className="text-alert-success text-sm">Active</Text>
                 </View>
                 <View className="p-3 flex-row justify-between items-center border-b border-b-white/15">
                   <Text className="text-white/50 text-sm">Network</Text>
                   <Text className="text-white text-sm">Ethereum</Text>
                 </View>
-                <View className="p-3 flex-row justify-between items-center">
-                  <Text className="text-white/50 text-sm">Network Fees</Text>
-                  <Text className="text-white text-sm">0.0029 ETH</Text>
-                </View>
               </View>
             </View>
             <View>
               <Text className="text-white/50 text-sm font-medium py-3">
-                Swap
+                Stake
               </Text>
               <View className="border border-white/15 rounded-lg w-full">
                 <View className="p-3 flex-row justify-between items-center border-b border-b-white/15">
-                  <Text className="text-white/50 text-sm">Method</Text>
-                  <Text className="text-white text-sm">Google Play</Text>
+                  <Text className="text-white/50 text-sm">Term</Text>
+                  <Text className="text-white text-sm">30 Days</Text>
                 </View>
                 <View className="p-3 flex-row justify-between items-center border-b border-b-white/15">
-                  <Text className="text-white/50 text-sm">Provider</Text>
-                  <Text className="text-white text-sm">Blockchain.com</Text>
+                  <Text className="text-white/50 text-sm">Validator</Text>
+                  <Text className="text-white text-sm">Rocketpool</Text>
                 </View>
                 <View className="p-3 flex-row justify-between items-center border-b border-b-white/15">
-                  <Text className="text-white/50 text-sm">You Paid</Text>
-                  <Text className="text-white text-sm">$110.98</Text>
+                  <Text className="text-white/50 text-sm">Estimated APR</Text>
+                  <Text className="text-white text-sm">3.12%</Text>
                 </View>
+
                 <View className="p-3 flex-row justify-between items-center border-b border-b-white/15">
-                  <Text className="text-white/50 text-sm">You Received</Text>
-                  <Text className="text-alert-success text-sm">
-                    +7.4308 LINK
-                  </Text>
+                  <Text className="text-white/50 text-sm">Value Date</Text>
+                  <Text className="text-white text-sm">11/24/2024 23:08</Text>
                 </View>
                 <View className="p-3 flex-row justify-between items-center">
-                  <Text className="text-white/50 text-sm">Transaction ID</Text>
-                  <Text className="text-text-link text-sm">
-                    4uZ3TVEZcjEeZ7..
+                  <Text className="text-white/50 text-sm">
+                    Interest End Date
                   </Text>
+                  <Text className="text-white text-sm">12/24/2024 23:08</Text>
+                </View>
+                <View className="p-3 flex-row justify-between items-center">
+                  <Text className="text-white/50 text-sm">Redemption Date</Text>
+                  <Text className="text-white text-sm">11/25/2024 23:08</Text>
                 </View>
               </View>
             </View>
@@ -99,4 +98,4 @@ const TransactionBuyScreen = ({
   );
 };
 
-export default TransactionBuyScreen;
+export default TransactionStakeScreen;

@@ -1,26 +1,26 @@
 import { View, Text } from "react-native";
 import React from "react";
 import ScreenView from "@/layout/ScreenView";
-import { TransactionBuyDetailsScreenProps } from "@/utils/types";
+import { TransactionSellDetailsScreenProps } from "@/utils/types";
 import GlobalHeader from "@/components/header/GlobalHeader";
 import TransactionDetailLine from "@/components/ui/TransactionDetailLine";
-import BuyIcon from "@/assets/icons/buy.svg";
+import SellIcon from "@/assets/icons/sell.svg";
 import PrimaryButton from "@/components/button/PrimaryButton";
 
-const TransactionBuyScreen = ({
+const TransactionSellScreen = ({
   navigation,
-}: TransactionBuyDetailsScreenProps) => {
+}: TransactionSellDetailsScreenProps) => {
   return (
     <ScreenView>
-      <GlobalHeader title="Buy" ionicons={{ name: "close" }} />
+      <GlobalHeader title="Sell" ionicons={{ name: "close" }} />
       <View className="flex-1 justify-between mt-2">
         <View className="px-3">
           <TransactionDetailLine
             buy
-            Icon={BuyIcon}
-            src={require("@/assets/images/link.png")}
-            price="7.4308"
-            network="LINK"
+            Icon={SellIcon}
+            src={require("@/assets/images/usdc.png")}
+            price="36.02"
+            network="USDC"
           />
           <Text className="text-base font-medium text-white py-3">Details</Text>
           <View>
@@ -99,4 +99,4 @@ const TransactionBuyScreen = ({
   );
 };
 
-export default TransactionBuyScreen;
+export default TransactionSellScreen;

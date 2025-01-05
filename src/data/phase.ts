@@ -113,19 +113,19 @@ export const TradeMenuListData = [
     Icon: SellIcon,
     screen: "sell-stack",
   },
-  {
-    id: 3,
-    title: "Receive",
-    subTitle: "Get crypto from others",
-    Icon: ReceiveIcon,
-    screen: "receive-stack",
-  },
+  // {
+  //   id: 3,
+  //   title: "Receive",
+  //   subTitle: "Get crypto from others",
+  //   Icon: ReceiveIcon,
+  //   screen: "receive-stack",
+  // },
   {
     id: 4,
     title: "Send",
     subTitle: "Send crypto to any account",
     Icon: SendIcon,
-    screen: "swipe-stack",
+    screen: "send-stack",
   },
   {
     id: 5,
@@ -176,5 +176,100 @@ export const ProviderListData: ProviderListDataProps[] = [
     price: "0.32 LINK",
     cost: "$4.68",
     src: require("@/assets/images/Rise.png"),
+  },
+];
+export const ValidatorListData: ProviderListDataProps[] = [
+  {
+    name: "Rocketpool",
+    price: "3.12%",
+    cost: "0.3432 ETH",
+    src: require("@/assets/images/rocketpool.png"),
+  },
+  {
+    name: "Ankr",
+    price: "3.11%",
+    cost: "0.3430 ETH",
+    src: require("@/assets/images/ankr.png"),
+  },
+  {
+    name: "Lido",
+    price: "3.08%",
+    cost: "0.3428 ETH",
+    src: require("@/assets/images/lido.png"),
+  },
+];
+
+export const TransactionHistoryListData = [
+  {
+    id: 1,
+    title: "11/11/2024 23:05",
+    subTitle: "7.43 LINK",
+    Icon: BuyIcon,
+  },
+  {
+    id: 2,
+    title: "11/10/2024 22:14",
+    subTitle: "36.02 USDC",
+    Icon: SellIcon,
+  },
+  {
+    id: 3,
+    title: "11/08/2024 00:30",
+    subTitle: "Get crypto from others",
+    Icon: ReceiveIcon,
+  },
+  {
+    id: 4,
+    title: "11/07/2024 00:29",
+    subTitle: "36.02 USDC",
+    Icon: SendIcon,
+  },
+  {
+    id: 5,
+    title: "11/01/2024 13:44",
+    subTitle: "0.521 ETH for 0.01813402 BTC",
+    Icon: SwapIcon,
+  },
+  {
+    id: 6,
+    title: "11/01/2024 12:32",
+    subTitle: "11.00 ETH - 30d",
+    Icon: StakeIcon,
+  },
+  {
+    id: 7,
+    title: "10/11/2024 23:05",
+    subTitle: "7.43 LINK",
+    Icon: BuyIcon,
+  },
+  {
+    id: 8,
+    title: "10/10/2024 22:14",
+    subTitle: "36.02 USDC",
+    Icon: SellIcon,
+  },
+  {
+    id: 9,
+    title: "10/08/2024 00:30",
+    subTitle: "Get crypto from others",
+    Icon: ReceiveIcon,
+  },
+  {
+    id: 10,
+    title: "10/07/2024 00:29",
+    subTitle: "36.02 USDC",
+    Icon: SendIcon,
+  },
+  {
+    id: 11,
+    title: "10/01/2024 13:44",
+    subTitle: "0.521 ETH for 0.01813402 BTC",
+    Icon: SwapIcon,
+  },
+  {
+    id: 12,
+    title: "10/01/2024 12:32",
+    subTitle: "11.00 ETH - 30d",
+    Icon: StakeIcon,
   },
 ];
