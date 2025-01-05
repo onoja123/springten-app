@@ -152,10 +152,10 @@ const BottomTab = () => {
               title={value.title}
               Icon={value.Icon}
               onPress={() => {
-                bottomSheetRef.current?.close(); // Close the bottom sheet
+                bottomSheetRef.current?.close();
                 navigation.navigate("transaction-type-stack", {
                   screen: value.screen,
-                }); // Replace with the actual target screen name
+                }); 
               }}
             />
           ))}
