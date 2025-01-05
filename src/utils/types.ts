@@ -32,6 +32,7 @@ export type BottomTabParamList = {
 export type TransactionTypeStackParamList = {
   "swap-stack": undefined;
   "buy-stack": undefined;
+  "send-stack": undefined;
 };
 
 export type SwapStackParamList = {
@@ -66,9 +67,9 @@ export type SellStackParamList = {
 };
 
 export type SendStackParamList = {
-  "select-token-screen": { title: string };
-  "form-screen": undefined;
-  "quote-screen": undefined;
+  "select-send-token-screen": { title: string };
+  "form-send-screen": undefined;
+  "quote-send-screen": undefined;
   "transaction-send-details-screen": undefined;
   "bottom-tab": { screen: string };
 };
@@ -113,17 +114,17 @@ export type TransactionBuyDetailsScreenProps = StackScreenProps<
 
 export type SelectSendTokenScreenProps = StackScreenProps<
   SendStackParamList,
-  "select-token-screen"
+  "select-send-token-screen"
 >;
 
 export type FormSendScreenProps = StackScreenProps<
   SendStackParamList,
-  "form-screen"
+  "form-send-screen"
 >;
 
 export type QuoteSendScreenProps = StackScreenProps<
   SendStackParamList,
-  "quote-screen"
+  "quote-send-screen"
 >;
 
 export type TransactionSendDetailsScreenProps = StackScreenProps<
