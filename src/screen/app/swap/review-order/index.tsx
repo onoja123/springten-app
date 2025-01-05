@@ -82,7 +82,12 @@ const ReviewOrderScreen = ({ navigation }: ReviewOrderScreenProps) => {
 
       {isLoading && <CustomSpinner />}
       {isModalVisible && (
-        <BottomModalMessage onPress={slideOutModal} slideAnim={slideAnim} />
+        <BottomModalMessage
+          subTitle="You’ve swapped 0.521 ETH for 0.01813402 BTC"
+          title="Transaction Success"
+          onPress={slideOutModal}
+          slideAnim={slideAnim}
+        />
       )}
     </>
   );

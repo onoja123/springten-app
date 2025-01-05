@@ -13,6 +13,13 @@ export type StoredCoinListProps = {
   price: string;
   cost: string;
 };
+export type ProviderListDataProps = {
+  name: string;
+  content?: string;
+  price: string;
+  cost: string;
+  src: any;
+};
 export const PhaseList = [
   {
     id: 1,
@@ -137,3 +144,37 @@ export const TradeMenuListData = [
 ];
 
 export const currencyTags = ["All", "Ethereum", "Polygon", "Base"];
+
+export const ProviderListData: ProviderListDataProps[] = [
+  {
+    name: "Rise",
+    content: "Lowest Price",
+    price: "0.32 LINK",
+    cost: "$4.68",
+    src: require("@/assets/images/Blockchain.com.png"),
+  },
+  {
+    name: "Rise",
+    price: "0.32 LINK",
+    cost: "$4.68",
+    src: require("@/assets/images/Moonpay.png"),
+  },
+  {
+    name: "Rise",
+    price: "0.32 LINK",
+    cost: "$4.68",
+    src: require("@/assets/images/Unlimit.png"),
+  },
+  {
+    name: "Rise",
+    price: "0.32 LINK",
+    cost: "$4.68",
+    src: require("@/assets/images/Transak.png"),
+  },
+  {
+    name: "Rise",
+    price: "0.32 LINK",
+    cost: "$4.68",
+    src: require("@/assets/images/Rise.png"),
+  },
+];

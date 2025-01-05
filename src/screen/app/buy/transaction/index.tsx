@@ -4,7 +4,7 @@ import ScreenView from "@/layout/ScreenView";
 import { TransactionBuyDetailsScreenProps } from "@/utils/types";
 import GlobalHeader from "@/components/header/GlobalHeader";
 import TransactionDetailLine from "@/components/ui/TransactionDetailLine";
-import SwapIcon from "@/assets/icons/swap.svg";
+import BuyIcon from "@/assets/icons/buy.svg";
 import PrimaryButton from "@/components/button/PrimaryButton";
 
 const TransactionBuyScreen = ({
@@ -13,9 +13,9 @@ const TransactionBuyScreen = ({
   return (
     <ScreenView>
       <GlobalHeader title="Buy" ionicons={{ name: "close" }} />
-      <View className="flex-1 justify-between">
+      <View className="flex-1 justify-between mt-2">
         <View className="px-3">
-          <TransactionDetailLine swap Icon={SwapIcon} />
+          <TransactionDetailLine buy Icon={BuyIcon} />
           <Text className="text-base font-medium text-white py-3">Details</Text>
           <View>
             <View>
@@ -31,7 +31,7 @@ const TransactionBuyScreen = ({
                   <Text className="text-white/50 text-sm">Status</Text>
                   <Text className="text-alert-success text-sm">Success</Text>
                 </View>
-                <View className="p-3 flex-row justify-between items-center">
+                <View className="p-3 flex-row justify-between items-center border-b border-b-white/15">
                   <Text className="text-white/50 text-sm">Network</Text>
                   <Text className="text-white text-sm">Ethereum</Text>
                 </View>
@@ -56,12 +56,12 @@ const TransactionBuyScreen = ({
                 </View>
                 <View className="p-3 flex-row justify-between items-center border-b border-b-white/15">
                   <Text className="text-white/50 text-sm">You Paid</Text>
-                  <Text className="text-white text-sm">0.521 ETH</Text>
+                  <Text className="text-white text-sm">$110.98</Text>
                 </View>
                 <View className="p-3 flex-row justify-between items-center border-b border-b-white/15">
                   <Text className="text-white/50 text-sm">You Received</Text>
                   <Text className="text-alert-success text-sm">
-                    +0.01813402 BTC
+                    +7.4308 LINK
                   </Text>
                 </View>
                 <View className="p-3 flex-row justify-between items-center">
@@ -80,9 +80,9 @@ const TransactionBuyScreen = ({
             className="bg-primary-button"
             textClassName="text-black"
             onPress={() =>
-                navigation.navigate("bottom-tab",{
-                    screen: "home-screen",
-                })
+              navigation.navigate("bottom-tab", {
+                screen: "home-screen",
+              })
             }
           >
             Close

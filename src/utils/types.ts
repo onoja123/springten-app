@@ -45,7 +45,12 @@ export type SwapStackParamList = {
 export type BuyStackParamList = {
   "select-token-screen": { title: string };
   "form-screen": undefined;
-  "quote-screen": undefined;
+  "quote-screen":
+    | {
+        paymentMethod: string;
+        providerIndex: number;
+      }
+    | undefined;
   "select-payment-screen": undefined;
   "transaction-buy-details-screen": undefined;
   "bottom-tab": { screen: string };
@@ -59,7 +64,6 @@ export type SellStackParamList = {
   "transaction-sell-details-screen": undefined;
   "bottom-tab": { screen: string };
 };
-
 
 export type SendStackParamList = {
   "select-token-screen": { title: string };
@@ -97,12 +101,10 @@ export type QuoteScreenProps = StackScreenProps<
   "quote-screen"
 >;
 
-
 export type SelectPaymentScreenProps = StackScreenProps<
   BuyStackParamList,
   "select-payment-screen"
 >;
-
 
 export type TransactionBuyDetailsScreenProps = StackScreenProps<
   BuyStackParamList,
@@ -123,7 +125,6 @@ export type QuoteSendScreenProps = StackScreenProps<
   SendStackParamList,
   "quote-screen"
 >;
-
 
 export type TransactionSendDetailsScreenProps = StackScreenProps<
   SendStackParamList,

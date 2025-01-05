@@ -1,4 +1,4 @@
-import { View, Text, Animated } from "react-native";
+import { View, Text, Animated, TouchableOpacity } from "react-native";
 import React, { useRef, useState } from "react";
 import { QuoteScreenProps } from "@/utils/types";
 import ScreenView from "@/layout/ScreenView";
@@ -9,20 +9,30 @@ import LineCheckBox from "@/components/ui/LineCheckBox";
 import CustomSpinner from "@/components/ui/CustomSpinner";
 import BottomModalMessage from "@/components/ui/BottomModalMessage";
 import { HEIGHT } from "@/constants/size";
+import BuyInputForm from "@/components/input/BuyInputForm";
+import ValidQuote from "@/components/ui/ValidQuote";
+import { Ionicons } from "@expo/vector-icons";
+import { CustomToaster } from "@/utils/core";
 
-const QuoteScreen = ({ navigation }: QuoteScreenProps) => {
+const QuoteScreen = ({ navigation, route }: QuoteScreenProps) => {
   const [isLoading, setIsLoading] = useState(false);
   const slideAnim = useRef(new Animated.Value(0)).current;
   const [isModalVisible, setIsModalVisible] = useState(false);
 
+  const selectedPayment = route.params?.paymentMethod;
+  const selectedProvider = route.params?.providerIndex;
+
   const handleNextScreen = () => {
-    setIsLoading(true);
-    setTimeout(() => {
-      setIsLoading(false);
-      setIsModalVisible(true);
-      slideInModal();
-      //   navigation.navigate("");
-    }, 5000);
+    if (selectedPayment && selectedProvider) {
+      setIsLoading(true);
+      setTimeout(() => {
+        setIsLoading(false);
+        setIsModalVisible(true);
+        slideInModal();
+      }, 5000);
+    } else {
+      CustomToaster("info", "Please select a payment method", 2300);
+    }
   };
   const slideInModal = () => {
     Animated.timing(slideAnim, {
@@ -39,27 +49,68 @@ const QuoteScreen = ({ navigation }: QuoteScreenProps) => {
       useNativeDriver: true,
     }).start(() => {
       setIsModalVisible(false);
-      navigation.navigate("quote-screen");
+      navigation.navigate("transaction-buy-details-screen");
     }); // Hide the modal after animation
   };
 
   return (
     <>
       <ScreenView>
-        <GlobalHeader title="Quote" ionicons={{ name: "close" }} />
+        <GlobalHeader title="Quote" ionicons={{ name: "arrow-back" }} />
         <View className="flex-1 justify-between">
           <View className="p-3 gap-3">
-            <SwapInputForm navigation={navigation} />
+            <BuyInputForm disabled={true} />
+            <View>
+              <Text className="text-white text-base font-medium pb-3">
+                Details
+              </Text>
+              <View className="gap-2">
+                <TouchableOpacity
+                  onPress={() => navigation.navigate("select-payment-screen")}
+                  className="flex-row item-center justify-between p-3 rounded-lg bg-white/10"
+                >
+                  <Text className="text-white/50 text-sm">Method</Text>
+                  <View className="flex-row item-center gap-1">
+                    <Text className="text-white text-sm">
+                      {selectedPayment ? selectedPayment : "Select"}
+                    </Text>
+                    <Ionicons
+                      name="chevron-forward"
+                      size={16}
+                      color={"#FFFFFF80"}
+                    />
+                  </View>
+                </TouchableOpacity>
+                <TouchableOpacity
+                  onPress={() => navigation.navigate("select-payment-screen")}
+                  className="flex-row item-center justify-between p-3 rounded-lg bg-white/10"
+                >
+                  <Text className="text-white/50 text-sm">Provider</Text>
+                  <View className="flex-row item-center gap-1">
+                    <Text className="text-white text-sm">
+                      {selectedProvider ? "Blockchain.com" : "Select"}
+                    </Text>
+                    <Ionicons
+                      name="chevron-forward"
+                      size={16}
+                      color={"#FFFFFF80"}
+                    />
+                  </View>
+                </TouchableOpacity>
+              </View>
+            </View>
             <View className="border border-white/15 rounded-lg w-full">
               <View className="p-3 flex-row justify-between items-center border-b border-b-white/15">
-                <Text className="text-white/50 text-sm">Transaction Duration</Text>
+                <Text className="text-white/50 text-sm">
+                  Transaction Duration
+                </Text>
                 <Text className="text-white text-sm">0m 8s</Text>
               </View>
               <View className="p-3 flex-row justify-between items-center border-b border-b-white/15">
                 <Text className="text-white/50 text-sm">Network Fee</Text>
                 <Text className="text-white text-sm">0.00060 ETH/ $2.00</Text>
               </View>
-              <View className="p-3 flex-row justify-between items-center">
+              <View className="p-3 flex-row justify-between items-center border-b border-b-white/15">
                 <Text className="text-white/50 text-sm">Provider Fee</Text>
                 <Text className="text-white text-sm">0.00060 ETH/ $2.00</Text>
               </View>
@@ -70,12 +121,13 @@ const QuoteScreen = ({ navigation }: QuoteScreenProps) => {
             </View>
           </View>
           <View className="p-3 gap-3">
+            <ValidQuote text="Select Provider for precise quote" />
             <LineCheckBox checkbox />
             <View className="pt-3">
               <PrimaryButton
                 className="bg-call-action"
                 textClassName="text-call-action-text"
-                onPress={() => navigation.navigate("select-payment-screen")}
+                onPress={handleNextScreen}
               >
                 Continue
               </PrimaryButton>
@@ -84,6 +136,15 @@ const QuoteScreen = ({ navigation }: QuoteScreenProps) => {
         </View>
       </ScreenView>
 
+      {isLoading && <CustomSpinner />}
+      {isModalVisible && (
+        <BottomModalMessage
+          title="Transaction Success"
+          subTitle="You’ve purchased 7.43 LINK for $110.98"
+          onPress={slideOutModal}
+          slideAnim={slideAnim}
+        />
+      )}
     </>
   );
 };

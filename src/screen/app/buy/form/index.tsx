@@ -9,53 +9,46 @@ import MaxBalanceCheck from "@/components/ui/MaxBalanceCheck";
 import GasFeesEstimate from "@/components/ui/GasFeesEstimate";
 import PrimaryButton from "@/components/button/PrimaryButton";
 import ValidQuote from "@/components/ui/ValidQuote";
+import BuyInputForm from "@/components/input/BuyInputForm";
 
 const FormScreen = ({ navigation }: FormScreenProps) => {
-  const [selectedInput, setSelectedInput] = useState<"send" | "receive" | null>(
-    null
-  ); // Tracks which input is selected
-  const [sendValue, setSendValue] = useState(""); // Value for "You Send"
-  const [receiveValue, setReceiveValue] = useState(""); // Value for "You Receive"
+  const [selectedInput, setSelectedInput] = useState<"buy" | null>(null); // Tracks which input is selected
+  const [buyValue, setBuyValue] = useState(""); // Value for "You Send"
 
   const handleKeyPress = (key: string) => {
     // Append or remove values based on key pressed
-    if (selectedInput === "send") {
+    if (selectedInput === "buy") {
       if (key === "⌫") {
-        setSendValue((prev) => prev.slice(0, -1));
+        setBuyValue((prev) => prev.slice(0, -1));
       } else {
-        setSendValue((prev) => prev + key);
-      }
-    } else if (selectedInput === "receive") {
-      if (key === "⌫") {
-        setReceiveValue((prev) => prev.slice(0, -1));
-      } else {
-        setReceiveValue((prev) => prev + key);
+        setBuyValue((prev) => prev + key);
       }
     }
   };
   return (
     <ScreenView>
-      <GlobalHeader between title="Buy LINK" ionicons={{ name: "close" }} gas />
+      <GlobalHeader title="Buy LINK" ionicons={{ name: "close" }} />
       <View className="flex-1 justify-between">
         <View className="p-3">
-          <SwapInputForm
+          <BuyInputForm
             disabled={false}
             setSelectedInput={setSelectedInput}
             selectedInput={selectedInput}
-            sendValue={sendValue}
-            receiveValue={receiveValue}
-            navigation={navigation}
+            buyValue={buyValue}
           />
-          <ValidQuote />
+          <ValidQuote text="Enter valid amount for quote" />
         </View>
         <View>
-          <MaxBalanceCheck />
+          <MaxBalanceCheck isMax={false} />
           <CustomKeypad onPressKey={handleKeyPress} />
           <View className="p-3">
             <PrimaryButton
               className="bg-white flex-row"
               textClassName="text-black"
-              onPress={() => navigation.navigate("quote-screen")}
+              onPress={() => {
+                setSelectedInput(null);
+                navigation.navigate("quote-screen");
+              }}
             >
               Buy
             </PrimaryButton>

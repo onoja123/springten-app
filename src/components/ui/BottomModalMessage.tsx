@@ -6,9 +6,11 @@ import PrimaryButton from "../button/PrimaryButton";
 type Props = {
   onPress: () => void;
   slideAnim: Animated.Value;
+  title: string;
+  subTitle: string;
 };
 const BottomModalMessage = (props: Props) => {
-  const { onPress, slideAnim } = props;
+  const { onPress, slideAnim, subTitle, title } = props;
   return (
     <Animated.View
       style={{ transform: [{ translateY: slideAnim }] }}
@@ -20,12 +22,8 @@ const BottomModalMessage = (props: Props) => {
             <Ionicons name="checkmark" size={16} />
           </View>
           <View>
-            <Text className="text-white font-medium text-base">
-              Transaction Success
-            </Text>
-            <Text className="text-white/50 text-sm">
-              You’ve swapped 0.521 ETH for 0.01813402 BTC
-            </Text>
+            <Text className="text-white font-medium text-base">{title}</Text>
+            <Text className="text-white/50 text-sm">{subTitle}</Text>
           </View>
         </View>
         <View className="p-3">

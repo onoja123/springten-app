@@ -7,9 +7,10 @@ type Props = {
   Icon: React.FC<SvgProps>;
   swap?: boolean;
   isIcon?: boolean;
+  buy?: boolean;
 };
 const TransactionDetailLine = (props: Props) => {
-  const { Icon, isIcon = true, swap } = props;
+  const { Icon, isIcon = true, swap, buy } = props;
   return (
     <View className="border border-white/15 rounded-lg p-3 flex-row items-center gap-3">
       {isIcon && (
@@ -35,6 +36,16 @@ const TransactionDetailLine = (props: Props) => {
             <Text className="text-white text-2xl font-medium">BTC</Text>
           </View>
         </>
+      )}
+      {buy && (
+        <View className="flex-row items-center gap-3">
+          <Image
+            source={require("@/assets/images/link.png")}
+            className="w-6 h-6"
+          />
+          <Text className="text-white text-2xl font-medium">7.4308</Text>
+          <Text className="text-white/50 text-2xl font-medium">LINK</Text>
+        </View>
       )}
     </View>
   );

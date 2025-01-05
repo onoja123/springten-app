@@ -3,7 +3,11 @@ import React, { useEffect, useRef } from "react";
 import { Animated } from "react-native";
 import { StyleSheet } from "react-native";
 
-const ValidQuote = () => {
+type Props = {
+  text: string;
+};
+const ValidQuote = (props: Props) => {
+  const { text } = props;
   const rotateValue = useRef(new Animated.Value(0)).current;
 
   useEffect(() => {
@@ -29,7 +33,8 @@ const ValidQuote = () => {
   return (
     <View className="flex-row items-center justify-between py-3">
       <Text className="text-white/50 text-sm">
-      Enter valid amount for quote -
+        {text}
+        <Text className="text-white"> -</Text>
       </Text>
 
       <View className="flex-row items-center gap-1">
