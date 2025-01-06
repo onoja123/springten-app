@@ -88,18 +88,6 @@ const ChooseTermsStakeScreen = ({
             </View>
           </View>
         </View>
-
-        {/* <View className="p-3">
-          <PrimaryButton
-            className="bg-primary-button"
-            textClassName="text-black"
-            onPress={() =>
-                navigation.navigate("transaction-buy-details-screen")
-            }
-          >
-            Close
-          </PrimaryButton>
-        </View> */}
       </View>
     </ScreenView>
   );

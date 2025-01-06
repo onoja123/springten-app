@@ -92,7 +92,6 @@ const BottomTab = () => {
               bottomSheetRef.current?.expand();
             },
           }}
-          // component={TransactionTypeStack}
           options={{
             tabBarIcon: ({ color, focused }) => (
               <View
@@ -181,13 +180,9 @@ const styles = StyleSheet.create({
     backgroundColor: "#2a2a2a",
   },
   bottomSheet: {
-    // zIndex: 10, // Ensure it's above the tab bar
-    // // backgroundColor: "transparent", // Transparent to show the custom background
-    // position: "absolute",
-    // bottom: 60,
   },
   bottomSheetBackground: {
-    backgroundColor: "#2a2a2a", // Custom background color
+    backgroundColor: "#2a2a2a",
     position: "absolute",
     bottom: 150,
   },
@@ -197,45 +192,3 @@ const styles = StyleSheet.create({
     gap: 12,
   },
 });
-
-{
-  /* <BottomSheet>
-    {TradeMenuListData.map((value, index) => (
-      <TradeMenuItem
-        key={index}
-        subTitle={value.subTitle}
-        title={value.title}
-        Icon={value.Icon}
-      />
-    ))}
-  </BottomSheet> */
-}
-
-{
-  /* <Tab.Screen
-          name="transaction-type-stack"
-          // component={() => null}
-          // listeners={{
-          //   tabPress: (e) => {
-          //     e.preventDefault(); // Prevent default navigation
-          //     bottomSheetRef.current?.expand();
-          //     // setBottomSheetVisible(true); // Show the bottom sheet
-          //   },
-          // }}
-          component={TransactionTypeStack}
-          options={{
-            tabBarIcon: ({ color, focused }) => (
-              <View
-                className={`w-12 h-8 rounded-full items-center justify-center ${
-                  focused ? "bg-white/10" : ""
-                }`}
-              >
-                <TradeIcon fill={color} />
-              </View>
-            ),
-            tabBarStyle: {
-              display: "none",
-            },
-          }}
-        /> */
-}

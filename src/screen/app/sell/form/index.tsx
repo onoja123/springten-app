@@ -13,11 +13,10 @@ import BuyInputForm from "@/components/input/BuyInputForm";
 import SellInputForm from "@/components/input/SellInputForm";
 
 const SellFormScreen = ({ navigation }: FormSellScreenProps) => {
-  const [selectedInput, setSelectedInput] = useState<"sell" | null>(null); // Tracks which input is selected
-  const [sellValue, setSellValue] = useState(""); // Value for "You Send"
+  const [selectedInput, setSelectedInput] = useState<"sell" | null>(null);
+  const [sellValue, setSellValue] = useState(""); 
 
   const handleKeyPress = (key: string) => {
-    // Append or remove values based on key pressed
     if (selectedInput === "sell") {
       if (key === "⌫") {
         setSellValue((prev) => prev.slice(0, -1));

@@ -1,7 +1,6 @@
 import { View, Text, Image, TextInput } from "react-native";
 import React from "react";
 import { TouchableOpacity } from "react-native";
-import SwapIcon from "@/assets/icons/swap.svg";
 
 type Props = {
   disabled?: boolean;
@@ -40,7 +39,7 @@ const SendInputForm = (props: Props) => {
               value={sendValue}
               placeholder="0.00"
               className=" text-2xl text-white"
-              editable={false} // Prevent default keyboard input
+              editable={false}
               showSoftInputOnFocus={false}
               placeholderTextColor={"#fff"}
             />
@@ -54,7 +53,7 @@ const SendInputForm = (props: Props) => {
           <TextInput
             placeholder="0.00"
             className=" text-2xl text-white"
-            editable={false} // Prevent default keyboard input
+            editable={false}
             showSoftInputOnFocus={false}
             placeholderTextColor={"#fff"}
           />

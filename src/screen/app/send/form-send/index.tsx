@@ -17,11 +17,10 @@ import BuyInputForm from "@/components/input/BuyInputForm";
 import SendInputForm from "@/components/input/SendInputForm";
 
 const FormSendScreen = ({ navigation }: FormSendScreenProps) => {
-  const [selectedInput, setSelectedInput] = useState<"send" | null>(null); // Tracks which input is selected
-  const [sendValue, setSendValue] = useState(""); // Value for "You Send"
+  const [selectedInput, setSelectedInput] = useState<"send" | null>(null);
+  const [sendValue, setSendValue] = useState(""); 
 
   const handleKeyPress = (key: string) => {
-    // Append or remove values based on key pressed
     if (selectedInput === "send") {
       if (key === "⌫") {
         setSendValue((prev) => prev.slice(0, -1));

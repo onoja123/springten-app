@@ -4,9 +4,9 @@ import { Ionicons } from "@expo/vector-icons";
 
 type Props = {
   icon?: {
-    name: React.ComponentProps<typeof Ionicons>["name"]; // Icon name, e.g., 'home'
-    size?: number; // Icon size, default to 24
-    color?: string; // Icon color, default to black
+    name: React.ComponentProps<typeof Ionicons>["name"];
+    size?: number;
+    color?: string;
   };
   children: ReactNode;
   className: string;

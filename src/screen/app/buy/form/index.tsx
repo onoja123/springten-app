@@ -12,11 +12,10 @@ import ValidQuote from "@/components/ui/ValidQuote";
 import BuyInputForm from "@/components/input/BuyInputForm";
 
 const FormScreen = ({ navigation }: FormScreenProps) => {
-  const [selectedInput, setSelectedInput] = useState<"buy" | null>(null); // Tracks which input is selected
-  const [buyValue, setBuyValue] = useState(""); // Value for "You Send"
+  const [selectedInput, setSelectedInput] = useState<"buy" | null>(null);
+  const [buyValue, setBuyValue] = useState("");
 
   const handleKeyPress = (key: string) => {
-    // Append or remove values based on key pressed
     if (selectedInput === "buy") {
       if (key === "⌫") {
         setBuyValue((prev) => prev.slice(0, -1));

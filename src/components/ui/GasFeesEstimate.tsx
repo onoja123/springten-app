@@ -11,19 +11,19 @@ const GasFeesEstimate = () => {
     const startRotation = Animated.loop(
       Animated.timing(rotateValue, {
         toValue: 1,
-        duration: 2000, // Rotation duration
-        useNativeDriver: true, // Use native driver for performance
+        duration: 2000,
+        useNativeDriver: true, 
       })
     );
 
     startRotation.start();
 
-    return () => startRotation.stop(); // Clean up animation on unmount
+    return () => startRotation.stop();
   }, [rotateValue]);
 
   const rotateAnimation = rotateValue.interpolate({
     inputRange: [0, 1],
-    outputRange: ["0deg", "360deg"], // Rotate from 0 to 360 degrees
+    outputRange: ["0deg", "360deg"],
   });
 
   return (
