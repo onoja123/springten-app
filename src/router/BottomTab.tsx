@@ -21,6 +21,7 @@ import { useNavigation } from "@react-navigation/native";
 import TransactionScreen from "@/screen/app/transaction";
 import SettingsScreen from "@/screen/app/settings";
 import CollectScreen from "@/screen/collections";
+import ItemsCollectionScreen from "@/screen/collections/items-collections";
 const Tab = createBottomTabNavigator<BottomTabParamList>();
 const BottomTab = () => {
   const bottomSheetRef = useRef<BottomSheet>(null);
@@ -132,6 +133,18 @@ const BottomTab = () => {
             ),
           }}
         />
+        <Tab.Screen
+          name="item-collection-screen"
+          component={ItemsCollectionScreen}
+          options={{
+            tabBarStyle: {
+              display: "none",
+            },
+            tabBarItemStyle: {
+              display: "none",
+            },
+          }}
+        />
       </Tab.Navigator>
 
       <BottomSheet
@@ -155,7 +168,7 @@ const BottomTab = () => {
                 bottomSheetRef.current?.close();
                 navigation.navigate("transaction-type-stack", {
                   screen: value.screen,
-                }); 
+                });
               }}
             />
           ))}

@@ -26,6 +26,7 @@ export type BottomTabParamList = {
   "middle-tab": undefined;
   "menu-screen": undefined;
   "settings-screen": undefined;
+  "item-collection-screen": undefined;
   // "transaction-type-stack": Record<string, any>;
 };
 
@@ -232,4 +233,8 @@ export type HomeScreenProps = BottomTabScreenProps<
 export type TransactionScreenProps = BottomTabScreenProps<
   BottomTabParamList,
   "transaction-screen"
+>;
+export type ItemCollectionScreenProps = BottomTabScreenProps<
+  BottomTabParamList,
+  "item-collection-screen"
 >;
