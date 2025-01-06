@@ -113,13 +113,13 @@ export const TradeMenuListData = [
     Icon: SellIcon,
     screen: "sell-stack",
   },
-  // {
-  //   id: 3,
-  //   title: "Receive",
-  //   subTitle: "Get crypto from others",
-  //   Icon: ReceiveIcon,
-  //   screen: "receive-stack",
-  // },
+  {
+    id: 3,
+    title: "Receive",
+    subTitle: "Get crypto from others",
+    Icon: ReceiveIcon,
+    screen: "receive-stack",
+  },
   {
     id: 4,
     title: "Send",

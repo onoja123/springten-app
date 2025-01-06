@@ -52,14 +52,12 @@ const SelectSellTokenScreen = ({
             src={require("@/assets/images/uni.png")}
             title={"UNI"}
             content={`Uniswap`}
-            //   key={index}
             onPress={() => navigation.navigate("form-sell-screen")}
           />
           <TokenButtonItem
             src={require("@/assets/images/usdc.png")}
             title={"USDC"}
             content={`USD Coin`}
-            //   key={index}
             onPress={() => navigation.navigate("form-sell-screen")}
           />
         </View>

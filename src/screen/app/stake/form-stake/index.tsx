@@ -14,11 +14,10 @@ import SendInputForm from "@/components/input/SendInputForm";
 import StakeInputForm from "@/components/input/StakeInputForm";
 
 const FormStakeScreen = ({ navigation }: FormSkateScreenProps) => {
-  const [selectedInput, setSelectedInput] = useState<"stake" | null>(null); // Tracks which input is selected
-  const [stakeValue, setStakeValue] = useState(""); // Value for "You Send"
+  const [selectedInput, setSelectedInput] = useState<"stake" | null>(null);
+  const [stakeValue, setStakeValue] = useState("");
 
   const handleKeyPress = (key: string) => {
-    // Append or remove values based on key pressed
     if (selectedInput === "stake") {
       if (key === "⌫") {
         setStakeValue((prev) => prev.slice(0, -1));

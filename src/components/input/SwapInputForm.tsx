@@ -46,7 +46,7 @@ const SwapInputForm = (props: Props) => {
             value={sendValue}
             placeholder="0.521"
             className=" text-2xl text-white"
-            editable={false} // Prevent default keyboard input
+            editable={false} 
             showSoftInputOnFocus={false}
             placeholderTextColor={"#fff"}
           />
@@ -96,7 +96,7 @@ const SwapInputForm = (props: Props) => {
             value={receiveValue}
             placeholder="0.01813402"
             className=" text-2xl text-white"
-            editable={false} // Prevent default keyboard input
+            editable={false}
             showSoftInputOnFocus={false}
             placeholderTextColor={"#fff"}
           />

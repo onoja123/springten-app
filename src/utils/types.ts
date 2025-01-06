@@ -27,7 +27,6 @@ export type BottomTabParamList = {
   "menu-screen": undefined;
   "settings-screen": undefined;
   "item-collection-screen": undefined;
-  // "transaction-type-stack": Record<string, any>;
 };
 
 export type TransactionTypeStackParamList = {

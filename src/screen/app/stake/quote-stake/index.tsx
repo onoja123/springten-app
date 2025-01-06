@@ -37,7 +37,7 @@ const QuoteStakeScreen = ({ navigation, route }: QuoteStakeScreenProps) => {
   };
   const slideInModal = () => {
     Animated.timing(slideAnim, {
-      toValue: 0, // Slide to the visible position
+      toValue: 0,
       duration: 300,
       useNativeDriver: true,
     }).start();
@@ -45,13 +45,13 @@ const QuoteStakeScreen = ({ navigation, route }: QuoteStakeScreenProps) => {
 
   const slideOutModal = () => {
     Animated.timing(slideAnim, {
-      toValue: HEIGHT, // Slide back off-screen
+      toValue: HEIGHT,
       duration: 300,
       useNativeDriver: true,
     }).start(() => {
       setIsModalVisible(false);
       navigation.navigate("transaction-stake-screen");
-    }); // Hide the modal after animation
+    });
   };
 
   return (

@@ -12,12 +12,11 @@ import PrimaryButton from "@/components/button/PrimaryButton";
 const SwapCoinScreen = ({ navigation }: SwapScreenProps) => {
   const [selectedInput, setSelectedInput] = useState<"send" | "receive" | null>(
     null
-  ); // Tracks which input is selected
-  const [sendValue, setSendValue] = useState(""); // Value for "You Send"
-  const [receiveValue, setReceiveValue] = useState(""); // Value for "You Receive"
+  ); 
+  const [sendValue, setSendValue] = useState(""); 
+  const [receiveValue, setReceiveValue] = useState(""); 
 
   const handleKeyPress = (key: string) => {
-    // Append or remove values based on key pressed
     if (selectedInput === "send") {
       if (key === "⌫") {
         setSendValue((prev) => prev.slice(0, -1));

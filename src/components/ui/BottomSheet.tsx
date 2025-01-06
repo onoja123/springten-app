@@ -9,8 +9,8 @@ import { Gesture, GestureDetector } from "react-native-gesture-handler";
 import { HEIGHT } from "@/constants/size";
 import { SURFACE_COLOR } from "@/constants/colors";
 
-const MAX_TRANSLATE_Y = HEIGHT / 1.4; // Full open position
-const INITIAL_TRANSLATE_Y = -HEIGHT / 9; // Partially open position
+const MAX_TRANSLATE_Y = HEIGHT / 1.4;
+const INITIAL_TRANSLATE_Y = -HEIGHT / 9;
 
 export const BottomSheet = ({ ...props }) => {
   const translateY = useSharedValue(INITIAL_TRANSLATE_Y);

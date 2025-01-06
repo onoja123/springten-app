@@ -11,8 +11,8 @@ type Props = {
   ionicons?: React.ComponentProps<typeof Ionicons>;
   title?: string;
   between?: boolean;
-  network?: boolean; // Add network icon if true
-  gas?: boolean; // Add network icon if true
+  network?: boolean;
+  gas?: boolean;
 };
 const GlobalHeader = (props: Props) => {
   const { ionicons, title, between, network, gas } = props;

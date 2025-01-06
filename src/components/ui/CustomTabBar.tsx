@@ -17,7 +17,6 @@ const CustomTabBar = ({ state, descriptors, navigation }) => {
 
         const onPress = () => {
           if (route.name === "transaction-type-stack") {
-            //   bottomSheetRef.current.snapTo(0); // Open Bottom Sheet
           } else {
             const event = navigation.emit({
               type: "tabPress",

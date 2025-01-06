@@ -37,7 +37,7 @@ const StakeInputForm = (props: Props) => {
             value={stakeValue}
             placeholder="0.00"
             className=" text-2xl text-white"
-            editable={false} // Prevent default keyboard input
+            editable={false}
             showSoftInputOnFocus={false}
             placeholderTextColor={"#fff"}
           />

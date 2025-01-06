@@ -27,7 +27,7 @@ const QuoteSendScreen = ({ navigation }: QuoteSendScreenProps) => {
   };
   const slideInModal = () => {
     Animated.timing(slideAnim, {
-      toValue: 0, // Slide to the visible position
+      toValue: 0,
       duration: 300,
       useNativeDriver: true,
     }).start();
@@ -35,13 +35,13 @@ const QuoteSendScreen = ({ navigation }: QuoteSendScreenProps) => {
 
   const slideOutModal = () => {
     Animated.timing(slideAnim, {
-      toValue: HEIGHT, // Slide back off-screen
+      toValue: HEIGHT,
       duration: 300,
       useNativeDriver: true,
     }).start(() => {
       setIsModalVisible(false);
       navigation.navigate("transaction-send-details-screen");
-    }); // Hide the modal after animation
+    });
   };
 
   return (

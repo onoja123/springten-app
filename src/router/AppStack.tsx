@@ -152,7 +152,6 @@ export const TransactionTypeStack = () => {
       <TransactionType.Screen name="send-stack" component={SendTypeStack} />
       <TransactionType.Screen name="swap-stack" component={SwapTypeStack} />
       <TransactionType.Screen name="stake-stack" component={StakeTypeStack} />
-      {/* <TransactionType.Screen name="receive-stack" component={BuyTypeStack} /> */}
     </TransactionType.Navigator>
   );
 };
