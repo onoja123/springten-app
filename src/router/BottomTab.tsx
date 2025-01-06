@@ -22,6 +22,8 @@ import TransactionScreen from "@/screen/app/transaction";
 import SettingsScreen from "@/screen/app/settings";
 import CollectScreen from "@/screen/collections";
 import ItemsCollectionScreen from "@/screen/collections/items-collections";
+import ItemDetailScreen from "@/screen/collections/item-detail";
+import { CollectionStack } from "./AppStack";
 const Tab = createBottomTabNavigator<BottomTabParamList>();
 const BottomTab = () => {
   const bottomSheetRef = useRef<BottomSheet>(null);
@@ -104,8 +106,8 @@ const BottomTab = () => {
           }}
         />
         <Tab.Screen
-          name="collection-screen"
-          component={CollectScreen}
+          name="collection-stack"
+          component={CollectionStack}
           options={{
             tabBarIcon: ({ color, focused }) => (
               <View
@@ -131,18 +133,6 @@ const BottomTab = () => {
                 <SettingsIcon fill={color} />
               </View>
             ),
-          }}
-        />
-        <Tab.Screen
-          name="item-collection-screen"
-          component={ItemsCollectionScreen}
-          options={{
-            tabBarStyle: {
-              display: "none",
-            },
-            tabBarItemStyle: {
-              display: "none",
-            },
           }}
         />
       </Tab.Navigator>

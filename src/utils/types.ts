@@ -26,8 +26,14 @@ export type BottomTabParamList = {
   "middle-tab": undefined;
   "menu-screen": undefined;
   "settings-screen": undefined;
-  "item-collection-screen": undefined;
+  "collection-stack": undefined;
   // "transaction-type-stack": Record<string, any>;
+};
+
+export type CollectionStackParamList = {
+  "collection-screen": undefined;
+  "item-collection-screen": undefined;
+  "item-detail-screen": undefined;
 };
 
 export type TransactionTypeStackParamList = {
@@ -234,7 +240,15 @@ export type TransactionScreenProps = BottomTabScreenProps<
   BottomTabParamList,
   "transaction-screen"
 >;
-export type ItemCollectionScreenProps = BottomTabScreenProps<
-  BottomTabParamList,
+export type CollectionScreenProps = StackScreenProps<
+  CollectionStackParamList,
+  "collection-screen"
+>;
+export type ItemCollectionScreenProps = StackScreenProps<
+  CollectionStackParamList,
   "item-collection-screen"
+>;
+export type ItemDetailScreenProps = StackScreenProps<
+  CollectionStackParamList,
+  "item-detail-screen"
 >;

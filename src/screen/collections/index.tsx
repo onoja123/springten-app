@@ -1,12 +1,12 @@
 import { View, Text, ScrollView } from "react-native";
 import React, { useState } from "react";
-import { SwapScreenProps } from "@/utils/types";
+import { CollectionScreenProps, SwapScreenProps } from "@/utils/types";
 import ScreenView from "@/layout/ScreenView";
 import GlobalHeader from "@/components/header/GlobalHeader";
 import CustomSearch from "@/components/input/CustomSearch";
 import NftThumbnail from "@/components/list/NftThumbnail";
 
-const CollectScreen = ({ navigation }: any) => {
+const CollectScreen = ({ navigation }: CollectionScreenProps) => {
   return (
     <ScreenView>
       <GlobalHeader network between title="Collections" />

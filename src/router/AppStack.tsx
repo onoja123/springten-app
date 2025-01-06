@@ -22,9 +22,13 @@ import ReviewOrderScreen from "@/screen/app/swap/review-order";
 import SwapCoinScreen from "@/screen/app/swap/swap-token";
 import TransactionDetailsScreen from "@/screen/app/swap/transaction-details";
 import TransactionScreen from "@/screen/app/transaction";
+import CollectScreen from "@/screen/collections";
+import ItemDetailScreen from "@/screen/collections/item-detail";
+import ItemsCollectionScreen from "@/screen/collections/items-collections";
 import { ScreenOptions } from "@/utils/stack_options";
 import {
   BuyStackParamList,
+  CollectionStackParamList,
   SellStackParamList,
   SendStackParamList,
   StakeStackParamList,
@@ -39,6 +43,7 @@ const BuyType = createStackNavigator<BuyStackParamList>();
 const SellType = createStackNavigator<SellStackParamList>();
 const SendType = createStackNavigator<SendStackParamList>();
 const StakeType = createStackNavigator<StakeStackParamList>();
+const Collection = createStackNavigator<CollectionStackParamList>();
 export const BuyTypeStack = () => {
   return (
     <BuyType.Navigator screenOptions={ScreenOptions}>
@@ -154,5 +159,21 @@ export const TransactionTypeStack = () => {
       <TransactionType.Screen name="stake-stack" component={StakeTypeStack} />
       {/* <TransactionType.Screen name="receive-stack" component={BuyTypeStack} /> */}
     </TransactionType.Navigator>
+  );
+};
+
+export const CollectionStack = () => {
+  return (
+    <Collection.Navigator screenOptions={ScreenOptions}>
+      <Collection.Screen name="collection-screen" component={CollectScreen} />
+      <Collection.Screen
+        name="item-collection-screen"
+        component={ItemsCollectionScreen}
+      />
+      <Collection.Screen
+        name="item-detail-screen"
+        component={ItemDetailScreen}
+      />
+    </Collection.Navigator>
   );
 };

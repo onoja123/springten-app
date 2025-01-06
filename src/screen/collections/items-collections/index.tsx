@@ -17,28 +17,28 @@ const ItemsCollectionScreen = ({ navigation }: ItemCollectionScreenProps) => {
         <Text className="text-sm text-white/50 py-3">Items in collections</Text>
         <View className="flex-row gap-2 items-center flex-wrap">
           <NftThumbnail
-            onPress={() => navigation.navigate("item-collection-screen")}
+            onPress={() => navigation.navigate("item-detail-screen")}
             item
             src={require("@/assets/images/nft-1.png")}
             title="Okubo"
             price="0.362 ETH"
           />
           <NftThumbnail
-            onPress={() => navigation.navigate("item-collection-screen")}
+            onPress={() => navigation.navigate("item-detail-screen")}
             item
             src={require("@/assets/images/item-1.png")}
             title="Toktun"
             price="0.362 ETH"
           />
           <NftThumbnail
-            onPress={() => navigation.navigate("item-collection-screen")}
+            onPress={() => navigation.navigate("item-detail-screen")}
             item
             src={require("@/assets/images/item-2.png")}
             title="Huurk"
             price="0.362 ETH"
           />
           <NftThumbnail
-            onPress={() => navigation.navigate("item-collection-screen")}
+            onPress={() => navigation.navigate("item-detail-screen")}
             item
             src={require("@/assets/images/item-3.png")}
             title="Ferulia"
