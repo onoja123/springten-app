@@ -26,21 +26,21 @@ const TransactionScreen = ({ navigation }: TransactionScreenProps) => {
       textAnimationRefs.forEach((animatedValue) => animatedValue.setValue(-50));
       const animations = animationRefs.map((animatedValue, index) => {
         return Animated.timing(animatedValue, {
-          toValue: 0, // Slide to the original position
+          toValue: 0,
           duration: 500,
-          delay: index * 100, // Add delay for each item
+          delay: index * 100,
           useNativeDriver: true,
         });
       });
       const textAnimations = textAnimationRefs.map((animatedValue, index) => {
         return Animated.timing(animatedValue, {
-          toValue: 0, // Slide text to its position
+          toValue: 0,
           duration: 600,
-          delay: index * 200, // Stagger text animation
+          delay: index * 200,
           useNativeDriver: true,
         });
       });
-      Animated.stagger(100, [...textAnimations, ...animations]).start(); // Staggered animations
+      Animated.stagger(100, [...textAnimations, ...animations]).start();
     }
   }, [animationRefs, isFocused, textAnimationRefs]);
   return (
@@ -53,10 +53,10 @@ const TransactionScreen = ({ navigation }: TransactionScreenProps) => {
         <View className="px-3">
           <Animated.Text
             style={{
-              transform: [{ translateY: textAnimationRefs[0] }], // Slide down
+              transform: [{ translateY: textAnimationRefs[0] }],
               opacity: textAnimationRefs[0].interpolate({
                 inputRange: [-50, 0],
-                outputRange: [0, 1], // Fade-in
+                outputRange: [0, 1],
               }),
             }}
             className="text-white/50 text-sm font-medium py-3"
@@ -68,10 +68,10 @@ const TransactionScreen = ({ navigation }: TransactionScreenProps) => {
               <Animated.View
                 key={index}
                 style={{
-                  transform: [{ translateY: animationRefs[index] }], // Slide-in effect
+                  transform: [{ translateY: animationRefs[index] }],
                   opacity: animationRefs[index].interpolate({
                     inputRange: [0, 100],
-                    outputRange: [1, 0], // Fade-in effect
+                    outputRange: [1, 0], 
                   }),
                 }}
               >
@@ -86,10 +86,10 @@ const TransactionScreen = ({ navigation }: TransactionScreenProps) => {
         <View className="px-3">
           <Animated.Text
             style={{
-              transform: [{ translateY: textAnimationRefs[1] }], // Slide down
+              transform: [{ translateY: textAnimationRefs[1] }],
               opacity: textAnimationRefs[1].interpolate({
                 inputRange: [-50, 0],
-                outputRange: [0, 1], // Fade-in
+                outputRange: [0, 1],
               }),
             }}
             className="text-white/50 text-sm font-medium py-3"
@@ -99,7 +99,7 @@ const TransactionScreen = ({ navigation }: TransactionScreenProps) => {
           <View className="gap-3">
             {TransactionHistoryListData.slice(6, 12).map((value, index) => (
               <Animated.View
-                key={index + 6} // Offset index to avoid conflicts
+                key={index + 6}
                 style={{
                   transform: [{ translateY: animationRefs[index + 6] }],
                   opacity: animationRefs[index + 6].interpolate({

@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import { View, Text, TextInput, TouchableOpacity } from "react-native";
-import { Feather } from "@expo/vector-icons"; // For the icons
+import { Feather } from "@expo/vector-icons"; 
 
 const EditableInput = () => {
   const [isEditing, setIsEditing] = useState(false);
-  const [value, setValue] = useState("JordanAT23"); // Initial value
+  const [value, setValue] = useState("JordanAT23");
 
   return (
     <View className="p-4 bg-[#1C1C1E] rounded-lg">

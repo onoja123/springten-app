@@ -83,7 +83,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#00c3ff",
     justifyContent: "center",
     alignItems: "center",
-    marginTop: -30, // Floating effect
+    marginTop: -30,
   },
   bottomSheet: {
     backgroundColor: "#1f1f1f",

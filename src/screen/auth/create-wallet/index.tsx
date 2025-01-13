@@ -35,7 +35,6 @@ const CreateWalletScreen = ({ navigation }: CreateWalletScreenProps) => {
             <PrimaryButton
               textClassName="text-call-action-text"
               className="bg-call-action"
-              // onPress={() => navigation.navigate("bottom-tab")}
               onPress={handleNextScreen}
             >
               Get Started

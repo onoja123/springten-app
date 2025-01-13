@@ -88,7 +88,7 @@ const BottomTab = () => {
           component={() => null}
           listeners={{
             tabPress: (e) => {
-              e.preventDefault(); // Prevent default navigation
+              e.preventDefault();
               bottomSheetRef.current?.expand();
             },
           }}
@@ -150,7 +150,7 @@ const BottomTab = () => {
 
       <BottomSheet
         ref={bottomSheetRef}
-        index={-1} // Start in a closed state
+        index={-1}
         snapPoints={["25%", "55%"]}
         onChange={handleSheetChanges}
         backgroundStyle={styles.bottomSheetBackground}
@@ -184,7 +184,7 @@ export default BottomTab;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    position: "relative", // Allow stacking of elements
+    position: "relative",
   },
   contentContainer: {
     flex: 1,
@@ -199,7 +199,7 @@ const styles = StyleSheet.create({
   },
   bottomSheetContentContainer: {
     paddingHorizontal: 16,
-    backgroundColor: "#2a2a2a", // Match the bottom sheet background
+    backgroundColor: "#2a2a2a",
     gap: 12,
   },
 });

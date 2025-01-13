@@ -34,7 +34,6 @@ const SelectStakeTokenScreen = ({
             src={require("@/assets/images/eth.png")}
             title={"ETH"}
             content={`Ethereum`}
-            //   key={index}
             onPress={() => navigation.navigate("form-stake-screen")}
           />
           {/* ))} */}

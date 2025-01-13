@@ -21,7 +21,7 @@ const AssetListItem = (props: Props) => {
         toValue: 0, // Slide to the original position
         duration: 1500,
         delay, // Apply delay for the item
-        useNativeDriver: true, // Use native driver for better performance
+        useNativeDriver: true,
       }).start();
     }
   }, [translateX, delay, isFocused]);

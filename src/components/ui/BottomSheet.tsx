@@ -66,12 +66,10 @@ const styles = StyleSheet.create({
   bottomsheet_container: {
     width: "100%",
     height: 430,
-    // height: HEIGHT,
     backgroundColor: SURFACE_COLOR,
     position: "absolute",
     bottom: -30,
     zIndex: 12000,
-    // borderRadius: 25,
     borderTopLeftRadius: 8,
     borderTopRightRadius: 8,
     padding: 12,

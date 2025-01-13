@@ -40,7 +40,7 @@ const ReviewOrderScreen = ({ navigation }: ReviewOrderScreenProps) => {
     }).start(() => {
       setIsModalVisible(false);
       navigation.navigate("transaction-swap-details-screen");
-    }); // Hide the modal after animation
+    });
   };
 
   return (
