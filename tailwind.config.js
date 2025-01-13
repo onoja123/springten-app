@@ -14,6 +14,9 @@ module.exports = {
         "text-link": "#8181E6",
         "alert-success": "#5CE677",
       },
+      spacing: {
+        "2/2": "48%",
+      },
     },
   },
   plugins: [],

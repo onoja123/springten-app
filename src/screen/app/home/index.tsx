@@ -8,13 +8,13 @@ import AssetListContainer from "@/components/list/AssetListContainer";
 import { TradeMenuListData } from "@/data/phase";
 import TradeMenuItem from "@/components/list/TradeMenuItem";
 
-const HomeScreen = ({}: HomeScreenProps) => {
+const HomeScreen = ({ navigation }: HomeScreenProps) => {
   return (
     <ScreenView style={{ flex: 0 }}>
       <GlobalHeader network between />
       <ScrollView className="h-full">
         <View className="p-3">
-          <AssetValueContainer />
+          <AssetValueContainer navigation={navigation} />
         </View>
         <AssetListContainer />
       </ScrollView>

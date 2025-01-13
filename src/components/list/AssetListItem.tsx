@@ -1,16 +1,41 @@
-import { View, Text, Image } from "react-native";
-import React from "react";
+import { View, Text, Image, Animated } from "react-native";
+import React, { useEffect, useRef } from "react";
 import { Fontisto } from "@expo/vector-icons";
 import { StoredCoinListProps } from "@/data/phase";
+import { useIsFocused } from "@react-navigation/native";
 
 type Props = {
   isItemHere?: boolean;
   item?: StoredCoinListProps;
+  delay?: number;
 };
 const AssetListItem = (props: Props) => {
-  const { isItemHere, item } = props;
+  const { isItemHere, item, delay = 0 } = props;
+  const translateX = useRef(new Animated.Value(-200)).current;
+  const isFocused = useIsFocused();
+
+  useEffect(() => {
+    if (isFocused) {
+      translateX.setValue(-200);
+      Animated.timing(translateX, {
+        toValue: 0, // Slide to the original position
+        duration: 1500,
+        delay, // Apply delay for the item
+        useNativeDriver: true, // Use native driver for better performance
+      }).start();
+    }
+  }, [translateX, delay, isFocused]);
   return (
-    <View className="p-3 flex-row items-center justify-between">
+    <Animated.View
+      style={{
+        transform: [{ translateX }], // Apply the slide-in effect
+        opacity: translateX.interpolate({
+          inputRange: [-200, 0],
+          outputRange: [0, 1], // Fade in as it slides in
+        }),
+      }}
+      className="p-3 flex-row items-center justify-between"
+    >
       <View className="flex-row items-center gap-3">
         {isItemHere && (
           <Image source={item?.src} className="w-9 h-9" resizeMode="cover" />
@@ -38,7 +63,7 @@ const AssetListItem = (props: Props) => {
           {isItemHere ? item?.cost : "-"}
         </Text>
       </View>
-    </View>
+    </Animated.View>
   );
 };
 

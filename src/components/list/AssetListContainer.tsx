@@ -20,6 +20,7 @@ const AssetListContainer = () => {
             isItemHere={StoredCoinList.length > 0}
             key={index}
             item={value}
+            delay={index * 200}
           />
         ))}
       </View>

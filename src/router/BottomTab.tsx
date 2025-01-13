@@ -23,7 +23,7 @@ import SettingsScreen from "@/screen/app/settings";
 import CollectScreen from "@/screen/collections";
 import ItemsCollectionScreen from "@/screen/collections/items-collections";
 import ItemDetailScreen from "@/screen/collections/item-detail";
-import { CollectionStack } from "./AppStack";
+import { AccountStack, CollectionStack } from "./AppStack";
 const Tab = createBottomTabNavigator<BottomTabParamList>();
 const BottomTab = () => {
   const bottomSheetRef = useRef<BottomSheet>(null);
@@ -134,6 +134,18 @@ const BottomTab = () => {
             ),
           }}
         />
+        <Tab.Screen
+          name="account-stack"
+          component={AccountStack}
+          options={{
+            tabBarStyle: {
+              display: "none",
+            },
+            tabBarItemStyle: {
+              display: "none",
+            },
+          }}
+        />
       </Tab.Navigator>
 
       <BottomSheet
@@ -179,8 +191,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     backgroundColor: "#2a2a2a",
   },
-  bottomSheet: {
-  },
+  bottomSheet: {},
   bottomSheetBackground: {
     backgroundColor: "#2a2a2a",
     position: "absolute",

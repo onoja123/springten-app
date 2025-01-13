@@ -1,12 +1,46 @@
-import { View, Text, Image, TouchableOpacity } from "react-native";
-import React from "react";
+import { View, Text, Image, TouchableOpacity, Animated } from "react-native";
+import React, { useEffect, useRef } from "react";
 import { Ionicons } from "@expo/vector-icons";
 import ContentCopyIcon from "@/assets/icons/content_copy.svg";
 import SmileIcon from "@/assets/icons/smile.svg";
+import { BottomTabParamList } from "@/utils/types";
+import { BottomTabNavigationProp } from "@react-navigation/bottom-tabs";
+import { useIsFocused } from "@react-navigation/native";
 
-const AssetValueContainer = () => {
+type Props = {
+  navigation: BottomTabNavigationProp<
+    BottomTabParamList,
+    "home-screen",
+    undefined
+  >;
+};
+const AssetValueContainer = (props: Props) => {
+  const { navigation } = props;
+  const scale = useRef(new Animated.Value(0)).current;
+  const isFocused = useIsFocused();
+  useEffect(() => {
+    if (isFocused) {
+      scale.setValue(0);
+      Animated.sequence([
+        Animated.timing(scale, {
+          toValue: 0,
+          duration: 1000,
+          useNativeDriver: true,
+        }),
+        Animated.timing(scale, {
+          toValue: 1,
+          duration: 1000,
+          useNativeDriver: true,
+        }),
+      ]).start();
+    }
+  }, [scale, isFocused]);
+
   return (
-    <View className="border border-white/15 rounded-lg h-52">
+    <Animated.View
+      style={{ transform: [{ scale }] }}
+      className="border border-white/15 rounded-lg h-52"
+    >
       <View className="p-3 border-b border-b-white/15">
         <Text className="text-white/50 text-sm">Total Asset Value</Text>
         <Text className="text-white text-4xl font-medium">$2,654.3</Text>
@@ -31,11 +65,11 @@ const AssetValueContainer = () => {
           <SmileIcon />
           <Text className="text-base text-white">Jordan Avery Taylor</Text>
         </View>
-        <TouchableOpacity>
+        <TouchableOpacity onPress={() => navigation.navigate("account-stack")}>
           <Ionicons name="chevron-forward" size={24} color={"#FFFFFF80"} />
         </TouchableOpacity>
       </View>
-    </View>
+    </Animated.View>
   );
 };
 

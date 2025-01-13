@@ -27,7 +27,17 @@ export type BottomTabParamList = {
   "menu-screen": undefined;
   "settings-screen": undefined;
   "collection-stack": undefined;
+  "account-stack": undefined;
   // "transaction-type-stack": Record<string, any>;
+};
+
+export type AccountStackParamList = {
+  "account-screen": undefined;
+  "choose-dp-screen": undefined;
+  "choose-collection-screen": undefined;
+  "choose-collection-item-detail-screen": undefined;
+  "collection-single-detail-screen": undefined;
+  "home-screen": undefined;
 };
 
 export type CollectionStackParamList = {
@@ -251,4 +261,25 @@ export type ItemCollectionScreenProps = StackScreenProps<
 export type ItemDetailScreenProps = StackScreenProps<
   CollectionStackParamList,
   "item-detail-screen"
+>;
+
+export type AccountScreenProps = StackScreenProps<
+  AccountStackParamList,
+  "account-screen"
+>;
+export type ChooseDisplayPictureScreenProps = StackScreenProps<
+  AccountStackParamList,
+  "choose-dp-screen"
+>;
+export type ChooseDpCollectionScreenProps = StackScreenProps<
+  AccountStackParamList,
+  "choose-collection-screen"
+>;
+export type CollectionItemDetailScreenProps = StackScreenProps<
+  AccountStackParamList,
+  "choose-collection-item-detail-screen"
+>;
+export type SingleCollectionDetailScreenProps = StackScreenProps<
+  AccountStackParamList,
+  "collection-single-detail-screen"
 >;

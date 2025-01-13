@@ -1,3 +1,8 @@
+import AccountScreen from "@/screen/app/account";
+import ChooseDisplayPictureScreen from "@/screen/app/account/choose-dp";
+import CollectionItemDetailScreen from "@/screen/app/account/collection-item";
+import ChooseDpCollectionScreen from "@/screen/app/account/collections";
+import SingleCollectionDetailScreen from "@/screen/app/account/single-collection-detail";
 import FormScreen from "@/screen/app/buy/form";
 import QuoteScreen from "@/screen/app/buy/quote/indes";
 import SelectPaymentScreen from "@/screen/app/buy/select-payment";
@@ -27,6 +32,7 @@ import ItemDetailScreen from "@/screen/collections/item-detail";
 import ItemsCollectionScreen from "@/screen/collections/items-collections";
 import { ScreenOptions } from "@/utils/stack_options";
 import {
+  AccountStackParamList,
   BuyStackParamList,
   CollectionStackParamList,
   SellStackParamList,
@@ -44,6 +50,7 @@ const SellType = createStackNavigator<SellStackParamList>();
 const SendType = createStackNavigator<SendStackParamList>();
 const StakeType = createStackNavigator<StakeStackParamList>();
 const Collection = createStackNavigator<CollectionStackParamList>();
+const Account = createStackNavigator<AccountStackParamList>();
 export const BuyTypeStack = () => {
   return (
     <BuyType.Navigator screenOptions={ScreenOptions}>
@@ -174,5 +181,29 @@ export const CollectionStack = () => {
         component={ItemDetailScreen}
       />
     </Collection.Navigator>
+  );
+};
+
+export const AccountStack = () => {
+  return (
+    <Account.Navigator screenOptions={ScreenOptions}>
+      <Account.Screen name="account-screen" component={AccountScreen} />
+      <Account.Screen
+        name="choose-dp-screen"
+        component={ChooseDisplayPictureScreen}
+      />
+      <Account.Screen
+        name="choose-collection-screen"
+        component={ChooseDpCollectionScreen}
+      />
+      <Account.Screen
+        name="choose-collection-item-detail-screen"
+        component={CollectionItemDetailScreen}
+      />
+      <Account.Screen
+        name="collection-single-detail-screen"
+        component={SingleCollectionDetailScreen}
+      />
+    </Account.Navigator>
   );
 };

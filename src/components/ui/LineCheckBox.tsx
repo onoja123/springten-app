@@ -5,10 +5,11 @@ import FaceId from "@/assets/icons/face_id.svg";
 type Props = {
   isSwitch?: boolean;
   checkbox?: boolean;
+  title?: string;
 };
 
 const LineCheckBox = (props: Props) => {
-  const { isSwitch, checkbox } = props;
+  const { isSwitch, checkbox, title } = props;
   return (
     <View
       className={`w-full bg-white/10 rounded-lg p-3 flex-row justify-between items-center`}
@@ -25,8 +26,8 @@ const LineCheckBox = (props: Props) => {
           </Text>
         </View>
       )}
-
-      {isSwitch && (
+      {title && <Text className="text-white text-sm">{title}</Text>}
+      {isSwitch && !title && (
         <View className="flex-row items-center gap-3">
           <View className="w-12 h-12 justify-center items-center rounded-full bg-white/10">
             <FaceId />
