@@ -106,7 +106,7 @@ const NftThumbnail = (props: Props) => {
   // Interpolating shake values for side-to-side motion
   const shakeInterpolate = shakeAnimation.interpolate({
     inputRange: [0, 1],
-    outputRange: [0, 1], // Shaking 10px side-to-side
+    outputRange: [0, 1],
   });
 
   const animatedStyle = {
